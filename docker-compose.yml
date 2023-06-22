@@ -12,3 +12,4 @@ services:
       - "./backend_down_webhook.lua:/etc/haproxy/backend_down_webhook.lua"
     environment:
       DEMO_WEBHOOK_URL: "https://webhook.site/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+    working_dir: /usr/local/etc/haproxy
