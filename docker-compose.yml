@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  
+  haproxy:
+    image: haproxytech/haproxy-debian:2.8
+    ports:
+      - "80:80"
+      - "9999:9999"
+    volumes:
+      - "./haproxy.cfg:/etc/haproxy/haproxy.cfg"
+      - "./backend_down_webhook.lua:/etc/haproxy/backend_down_webhook.lua"
+    environment:
+      DEMO_WEBHOOK_URL: "https://webhook.site/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
